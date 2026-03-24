@@ -3,7 +3,7 @@ import About1 from "../assets/About1.png";
 import About2 from "../assets/About2.png";
 import About3 from "../assets/About3.png";
 import About4 from "../assets/About4.png";
-import About5 from "../assets/About5.png";
+import About5 from "../assets/about5.png";
 
 import Review1 from "../assets/RE2.png";
 import Review2 from "../assets/RE5.png";
