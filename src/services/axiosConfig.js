@@ -1,8 +1,20 @@
 
+// import axios from "axios";
+
+// const instance = axios.create({
+//   baseURL: "http://localhost:5000/api/auth",
+//   headers: {
+//     "Content-Type": "application/json",
+//   },
+//   withCredentials: true,
+// });
+
+// export default instance;
+
 import axios from "axios";
 
 const instance = axios.create({
-  baseURL: "http://localhost:5000/api/auth",
+  baseURL: "https://hotel-management-system-backend-production-0c8a.up.railway.app/api/auth",
   headers: {
     "Content-Type": "application/json",
   },
