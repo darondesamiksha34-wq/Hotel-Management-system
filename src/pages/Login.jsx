@@ -3,7 +3,7 @@ import BG from "../assets/Login1.jpg";
 import { MdOutlineEmail, MdLockOutline } from "react-icons/md";
 import { FcGoogle } from "react-icons/fc";
 import { useNavigate } from "react-router-dom";
-import axios from "axios";
+import { loginUser } from "../services/user.service";
 
 function Login() {
   const navigate = useNavigate();
@@ -15,31 +15,11 @@ function Login() {
     e.preventDefault();
     setLoading(true);
 
-    try {
-      const res = await axios.post(
-        "http://localhost:5000/api/auth/login",
-        { email, password },
-        { withCredentials: true } // ✅ important to receive cookies
-      );
-
-      if (res.data.success) {
-        if (res.data.isAccountVerified === false) {
-          alert("Please verify your email first!");
-          navigate("/verify-email"); // route for OTP verification
-        } else {
-          alert("Login Successful ✅");
-          navigate("/"); 
-        }
-      } else {
-        alert(res.data.message);
-      }
-
-    } catch (error) {
-      console.error(error);
-      alert(error.response?.data?.message || "Login failed ❌");
-    } finally {
-      setLoading(false);
-    }
+    const data = {
+                 email,
+                 password
+             }
+             loginUser(data)
   };
 
   return (
