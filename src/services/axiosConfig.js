@@ -1,7 +1,7 @@
 import axios from "axios";
 
 const instance = axios.create({
-  baseURL: "https://hotel-management-system-backend-production-0c8a.up.railway.app/api/auth",
+  baseURL: "https://hotel-management-system-backend-production-0c8a.up.railway.app",
   headers: {
     "Content-Type": "application/json",
   },

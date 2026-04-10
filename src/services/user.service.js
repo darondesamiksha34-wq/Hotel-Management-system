@@ -3,7 +3,7 @@ import instance from "./axiosConfig";
 //Signup user
 export const registerUser = async (data) => {
   try {
-    const response = await instance.post("/signup", data);
+    const response = await instance.post("/api/auth/signup", data);
     return response.data;
   } catch (error) {
     console.error("Signup Error:", error.response?.data || error.message);
@@ -14,7 +14,7 @@ export const registerUser = async (data) => {
 // Login user
 export const loginUser = async (data) => {
   try {
-    const response = await instance.post("/login", data);
+    const response = await instance.post("/api/auth/login", data);
     return response.data;
   } catch (error) {
     console.error("Login Error:", error.response?.data || error.message);
@@ -36,7 +36,7 @@ export const logoutUser = async () => {
 //Password user
 export const resetPassword = async () => {
   try {
-    const response = await instance.post("/reset-password");
+    const response = await instance.post("/api/auth/reset-password");
     return response.data;
   } catch (error) {
     console.error("Logout Error:", error.response?.data || error.message);
@@ -47,7 +47,7 @@ export const resetPassword = async () => {
 //otp
 export const sendResetOtp = async () => {
   try {
-    const response = await instance.post("/send-reset-otp");
+    const response = await instance.post("/api/auth/send-reset-otp");
     return response.data;
   } catch (error) {
     console.error("Logout Error:", error.response?.data || error.message);
