@@ -97,7 +97,7 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import LockB from "../assets/Lock.jpg";
-import { sendResetOtp } from "../services/auth.service";
+import { sendResetOtp } from "../services/user.service";
 
 function ForgotPassword() {
   const [email, setEmail] = useState("");
