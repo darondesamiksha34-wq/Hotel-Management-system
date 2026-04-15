@@ -135,11 +135,10 @@
 // }
 
 // export default ResetPassword;
-
 import { useState, useEffect } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 import LockB from "../assets/Lock.jpg";
-import { resetPassword } from "../services/user.service"; // 
+import { resetPassword } from "../services/user.service";
 
 function ResetPassword() {
   const location = useLocation();
@@ -159,6 +158,7 @@ function ResetPassword() {
   const handleReset = async (e) => {
     e.preventDefault();
 
+    // Validation
     if (!otp || !newPassword) {
       alert("Please fill all fields");
       return;
@@ -184,16 +184,13 @@ function ResetPassword() {
       });
 
       if (res?.success) {
-        alert("Password reset successful...!");
+        alert("Password reset successful ✅");
         navigate("/login");
       } else {
         alert(res?.message || "Reset failed");
       }
-
     } catch (error) {
-      alert(
-        error?.response?.data?.message || "Invalid OTP ❌"
-      );
+      alert(error?.response?.data?.message || "Invalid OTP ❌");
     } finally {
       setLoading(false);
     }
@@ -240,6 +237,14 @@ function ResetPassword() {
         >
           {loading ? "Resetting..." : "Reset Password"}
         </button>
+
+        {/* Optional: back to forgot */}
+        <p
+          onClick={() => navigate("/forgotpassword")}
+          className="text-center text-sm text-gray-500 mt-4 cursor-pointer hover:underline"
+        >
+          Change email
+        </p>
       </form>
     </div>
   );

@@ -93,6 +93,7 @@
 
 // export default ForgotPassword;
 
+
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import LockB from "../assets/Lock.jpg";
@@ -106,6 +107,7 @@ function ForgotPassword() {
   const handleSendOtp = async (e) => {
     e.preventDefault();
 
+    // Validation
     if (!email) {
       alert("Please enter your email");
       return;
